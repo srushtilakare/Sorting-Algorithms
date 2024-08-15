@@ -1,0 +1,40 @@
+//implementing bubble sort algorithm
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int n,i,j,temp;
+    
+    cout<<"\nEnter the Array Size: ";
+    cin>>n;
+    
+    int a[n]; //taking array of size n
+    cout<<"\nEnter Array Elements: ";
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    
+    //bubble sort algorithm
+    for(i=0;i<n-1;i++) //outer loop for traversing the array
+    {
+        for(j=0;j<n-i-1;j++) //inner loop for comparing adjecent elements
+        {
+            if(a[j]>a[j+1]) //swapping for sorted array
+            {
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+    
+    cout<<"\nArray after Sorting is: ";
+    for(i=0;i<n;i++)
+    {
+        cout<<a[i]<<" "; //displaying te sorted array
+    }
+    
+    return 0;
+}
